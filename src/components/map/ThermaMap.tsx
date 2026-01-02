@@ -17,7 +17,7 @@ const locations = {
     lacAllier: { lat: 46.1180, lng: 3.4280 },
     celestins: { lat: 46.1320, lng: 3.4180 },
     thermes: { lat: 46.1290, lng: 3.4230 },
-    gare: { lat: 46.1240, lng: 3.4150 },
+    gare: { lat: 46.1241, lng: 3.4016 },
 };
 
 // Parcours paths (simplified)
