@@ -12,7 +12,6 @@ import {
     Clock,
     Footprints,
     ThermometerSun,
-    Gauge,
     ChevronRight,
     Play,
     CheckCircle
@@ -178,7 +177,7 @@ export default function ThermaTrackPage() {
                 </Link>
                 <div>
                     <h1 className={styles.title}>Therma-Track 360</h1>
-                    <p className={styles.subtitle}>Santé & Environnement</p>
+                    <p className={styles.zfeInfo}>Qualité de l&apos;air en temps réel</p>
                 </div>
             </header>
 
@@ -251,7 +250,7 @@ export default function ThermaTrackPage() {
                     <div className={styles.airPurContent}>
                         <h2 className={styles.sectionTitle}>Itinéraire Air Pur</h2>
                         <p className={styles.infoText}>
-                            Calculez l'itinéraire le moins pollué, pas le plus court.
+                            Calculez l&apos;itinéraire le moins pollué, pas le plus court.
                         </p>
                         <div className={styles.routeForm}>
                             <div className={styles.inputGroup}>

@@ -15,7 +15,7 @@ import {
     Leaf
 } from "lucide-react";
 import styles from "./page.module.css";
-import { searchAddress } from "@/lib/addressService";
+import { searchAddress, AddressFeature } from "@/lib/addressService";
 import { LogisticsMapProps } from "@/components/map/LogisticsMap";
 
 // Dynamic import for Leaflet (SSR issue)
@@ -88,7 +88,7 @@ export default function LogisticsPage() {
     // Co-Colisage State with Real Address Search
     const [parcelOrigin, setParcelOrigin] = useState("");
     const [parcelDest, setParcelDest] = useState("");
-    const [addressSuggestions, setAddressSuggestions] = useState<any[]>([]);
+    const [addressSuggestions, setAddressSuggestions] = useState<AddressFeature[]>([]);
     const [activeInput, setActiveInput] = useState<"origin" | "dest" | null>(null);
 
     const handleAddressSearch = async (query: string, field: "origin" | "dest") => {
@@ -104,7 +104,7 @@ export default function LogisticsPage() {
         }
     };
 
-    const selectAddress = (addr: any) => {
+    const selectAddress = (addr: AddressFeature) => {
         if (activeInput === "origin") setParcelOrigin(addr.properties.label);
         else setParcelDest(addr.properties.label);
         setAddressSuggestions([]);
@@ -271,7 +271,7 @@ export default function LogisticsPage() {
                         <h2 className={styles.sectionTitle}>Vérification ZFE Clermont</h2>
                         <p className={styles.zfeInfo}>
                             <AlertTriangle size={16} />
-                            La Zone à Faibles Émissions de Clermont-Ferrand interdit certains véhicules selon leur vignette Crit'Air.
+                            La Zone à Faibles Émissions de Clermont-Ferrand interdit certains véhicules selon leur vignette Crit&apos;Air.
                         </p>
                         <div className={styles.zfeForm}>
                             <input

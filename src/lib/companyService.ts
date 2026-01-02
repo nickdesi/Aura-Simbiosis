@@ -20,15 +20,12 @@ export interface CompanyResponse {
     per_page: number;
 }
 
-export const searchCompanies = async (query: string, location?: { lat: number, lng: number }): Promise<Company[]> => {
+export const searchCompanies = async (query: string): Promise<Company[]> => {
     try {
         let url = `https://recherche-entreprises.api.gouv.fr/search?q=${encodeURIComponent(query)}&per_page=20`;
 
-        // Prioritize companies near Clermont/Vichy if no location provided
-        const lat = location?.lat || 45.7772; // Clermont
-        const lng = location?.lng || 3.0870;
 
-        // Add geo filtering if needed, but the basic API primarily searches by text.
+        // Add geo filtering for Puy-de-Dôme (63) and Allier (03)
         // We'll search specifically in the region by adding city names to query if generic
         if (!query.toLowerCase().includes("clermont") && !query.toLowerCase().includes("vichy")) {
             // url += " near..."; // The API doesn't support "near" directly in query easily without postal code

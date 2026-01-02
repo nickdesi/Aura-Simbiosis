@@ -5,7 +5,6 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import {
     ArrowLeft,
-    Factory,
     Recycle,
     Flame,
     Search,
@@ -224,7 +223,7 @@ export default function EcoFluxPage() {
                 <MapWithNoSSR
                     resources={filteredResources}
                     selectedId={selectedResource?.id || null}
-                    onSelect={(id) => setSelectedResource(resources.find(r => r.id === id) || null)}
+                    onSelect={(id: number) => setSelectedResource(resources.find(r => r.id === id) || null)}
                 />
             </section>
 
