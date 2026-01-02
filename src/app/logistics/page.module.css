@@ -1,0 +1,481 @@
+/* ============================================
+   AURA-LOGISTICS PAGE STYLES
+   ============================================ */
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-primary);
+}
+
+/* --- Header --- */
+.header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.backBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    transition: all var(--transition-fast);
+}
+
+.backBtn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: var(--color-neon-cyan);
+    color: var(--color-neon-cyan);
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-neon-cyan);
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* --- Tabs --- */
+.tabs {
+    display: flex;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-bg-secondary);
+    overflow-x: auto;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.tab:hover {
+    color: var(--color-text-primary);
+    background: var(--glass-bg);
+}
+
+.tab.active {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: var(--color-neon-cyan);
+    color: var(--color-neon-cyan);
+}
+
+/* --- Map Section --- */
+.mapSection {
+    height: 200px;
+    position: relative;
+}
+
+.mapPlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+/* --- Content --- */
+.content {
+    flex: 1;
+    padding: var(--space-md);
+    overflow-y: auto;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: var(--space-md);
+    color: var(--color-text-secondary);
+}
+
+/* --- List & Cards --- */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    transition: all var(--transition-fast);
+}
+
+.card:hover {
+    border-color: rgba(0, 217, 255, 0.3);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-neon-cyan), var(--color-neon-purple));
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-bg-primary);
+}
+
+.iconBox {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 217, 255, 0.1);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: var(--radius-md);
+    color: var(--color-neon-cyan);
+}
+
+.cardInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.driverName {
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.route {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.price,
+.reward {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.price {
+    color: var(--color-text-primary);
+}
+
+.reward {
+    color: var(--color-neon-green);
+}
+
+.cardFooter {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--glass-border);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.cardFooter span {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.btnReserve {
+    margin-left: auto;
+    padding: var(--space-xs) var(--space-md);
+    background: var(--color-neon-cyan);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-bg-primary);
+    font-weight: 500;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btnReserve:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
+/* --- ZFE Section --- */
+.zfeSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.zfeInfo {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    color: var(--color-neon-orange);
+}
+
+.zfeForm {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.input {
+    flex: 1;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--color-neon-cyan);
+}
+
+.input::placeholder {
+    color: var(--color-text-muted);
+    text-transform: none;
+}
+
+.btnCheck {
+    padding: var(--space-sm) var(--space-lg);
+    background: linear-gradient(135deg, var(--color-neon-cyan), var(--color-neon-purple));
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-bg-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btnCheck:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
+.zfeResult {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+}
+
+.zfeResult.allowed {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: var(--color-neon-green);
+}
+
+.zfeResult.denied {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+.zfeResult strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.zfeResult p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: inherit;
+    opacity: 0.8;
+}
+
+.alternatives {
+    margin-top: var(--space-md);
+}
+
+.alternatives h3 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-secondary);
+}
+
+.altCard {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-sm);
+    color: var(--color-neon-cyan);
+}
+
+.altCard strong {
+    display: block;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+}
+
+.altCard p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+    .tabs {
+        gap: var(--space-xs);
+    }
+
+    .tab span {
+        display: none;
+    }
+
+    .zfeForm {
+        flex-direction: column;
+    }
+}
+/* Address Search Styles */
+.colisageContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchBar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    background: var(--glass-bg);
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
+}
+
+.inputGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xs) var(--space-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+}
+
+.inputGroup:focus-within {
+    border-color: var(--color-neon-cyan);
+}
+
+.input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    padding: var(--space-xs) 0;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.suggestions li {
+    padding: var(--space-sm);
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--color-text-secondary);
+}
+
+.suggestions li:hover {
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--color-neon-cyan);
+}
+
+.filterRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.btnNew {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: linear-gradient(135deg, var(--color-neon-cyan), var(--color-neon-green));
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-bg-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btnNew:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-glow-cyan);
+}

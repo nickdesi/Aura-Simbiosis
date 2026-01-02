@@ -1,66 +1,110 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { Truck, Factory, Heart, ArrowRight, Zap, MapPin, Users } from "lucide-react";
 import styles from "./page.module.css";
 
-export default function Home() {
+const modules = [
+  {
+    id: "logistics",
+    title: "Aura-Logistics",
+    subtitle: "Mobilité & Fret Partagé",
+    description: "Covoiturage, co-colisage et calculateur ZFE pour optimiser vos trajets.",
+    icon: Truck,
+    color: "cyan",
+    href: "/logistics",
+    stats: [
+      { icon: Users, label: "79% autosolisme à réduire" },
+      { icon: MapPin, label: "Axe Clermont-Vichy" },
+    ],
+  },
+  {
+    id: "ecoflux",
+    title: "Eco-Flux B2B",
+    subtitle: "Industrie Circulaire",
+    description: "Bourse aux déchets et synergies industrielles géolocalisées.",
+    icon: Factory,
+    color: "green",
+    href: "/ecoflux",
+    stats: [
+      { icon: Zap, label: "Valorisation chaleur fatale" },
+      { icon: MapPin, label: "Zones Cataroux, Brézet" },
+    ],
+  },
+  {
+    id: "thermatrack",
+    title: "Therma-Track 360",
+    subtitle: "Santé & Environnement",
+    description: "Itinéraires 'Air Pur' et coaching post-cure personnalisé.",
+    icon: Heart,
+    color: "purple",
+    href: "/thermatrack",
+    stats: [
+      { icon: Heart, label: "Parcours Parcoura" },
+      { icon: MapPin, label: "Vichy Santé" },
+    ],
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className={styles.main}>
+      {/* Hero Section */}
+      <section className={styles.hero}>
+        <div className={styles.heroContent}>
+          <div className={styles.badge}>
+            <Zap size={14} />
+            <span>Métabolisme Territorial 2026</span>
+          </div>
+          <h1 className={styles.title}>
+            <span className={styles.titleGradient}>Aura</span>-Symbiosis
+          </h1>
+          <p className={styles.subtitle}>
+            Connectez les flux invisibles du territoire Clermont-Vichy.
+            Mobilité, industrie et santé réunis sur une seule plateforme.
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Modules Grid */}
+      <section className={styles.modules}>
+        <div className={styles.container}>
+          <h2 className={styles.sectionTitle}>Nos 3 Modules</h2>
+          <div className={styles.grid}>
+            {modules.map((module, index) => (
+              <Link
+                key={module.id}
+                href={module.href}
+                className={`${styles.card} ${styles[module.color]}`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className={styles.cardHeader}>
+                  <div className={styles.iconWrapper}>
+                    <module.icon size={28} />
+                  </div>
+                  <ArrowRight className={styles.arrow} size={20} />
+                </div>
+                <h3 className={styles.cardTitle}>{module.title}</h3>
+                <p className={styles.cardSubtitle}>{module.subtitle}</p>
+                <p className={styles.cardDescription}>{module.description}</p>
+                <div className={styles.cardStats}>
+                  {module.stats.map((stat, i) => (
+                    <div key={i} className={styles.stat}>
+                      <stat.icon size={14} />
+                      <span>{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Footer */}
+      <footer className={styles.footer}>
+        <p>Pôle Métropolitain Clermont-Vichy • 2026</p>
+      </footer>
+    </main>
   );
 }

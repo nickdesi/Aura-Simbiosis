@@ -1,0 +1,22 @@
+.map {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg-tertiary);
+}
+
+/* Override Leaflet popup styles */
+:global(.leaflet-popup-content-wrapper) {
+    background: var(--color-bg-tertiary) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-md) !important;
+    color: var(--color-text-primary) !important;
+}
+
+:global(.leaflet-popup-tip) {
+    background: var(--color-bg-tertiary) !important;
+}
+
+:global(.leaflet-popup-content) {
+    font-size: 0.875rem !important;
+    margin: 8px 12px !important;
+}

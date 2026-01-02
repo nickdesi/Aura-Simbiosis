@@ -1,0 +1,511 @@
+/* ============================================
+   THERMA-TRACK 360 PAGE STYLES
+   ============================================ */
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-primary);
+}
+
+/* --- Header --- */
+.header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.backBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    transition: all var(--transition-fast);
+}
+
+.backBtn:hover {
+    background: rgba(168, 85, 247, 0.1);
+    border-color: var(--color-neon-purple);
+    color: var(--color-neon-purple);
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-neon-purple);
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* --- Tabs --- */
+.tabs {
+    display: flex;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-bg-secondary);
+    overflow-x: auto;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.tab:hover {
+    color: var(--color-text-primary);
+    background: var(--glass-bg);
+}
+
+.tab.active {
+    background: rgba(168, 85, 247, 0.1);
+    border-color: var(--color-neon-purple);
+    color: var(--color-neon-purple);
+}
+
+/* --- Air Quality Banner --- */
+.airBanner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-md);
+    background: var(--glass-bg);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.airIndex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border: 3px solid;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+.indexValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.indexLabel {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.airDetails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-sm);
+    flex: 1;
+}
+
+.pollutant {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pollutant span {
+    font-size: 0.625rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
+
+.pollutant strong {
+    font-size: 0.75rem;
+    color: var(--color-text-primary);
+}
+
+/* --- Map Section --- */
+.mapSection {
+    height: 180px;
+    position: relative;
+}
+
+.mapPlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+/* --- Content --- */
+.content {
+    flex: 1;
+    padding: var(--space-md);
+    overflow-y: auto;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-secondary);
+}
+
+.infoText {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+}
+
+/* --- Air Pur Content --- */
+.airPurContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.routeForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--color-neon-purple);
+}
+
+.input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.btnCalculate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: linear-gradient(135deg, var(--color-neon-purple), #7c3aed);
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-top: var(--space-sm);
+}
+
+.btnCalculate:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-glow-purple);
+}
+
+/* --- Parcours Content --- */
+.parcoursContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+}
+
+.select {
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: 0.75rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.card:hover,
+.card.selected {
+    border-color: rgba(168, 85, 247, 0.5);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-sm);
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.badges {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.diffBadge,
+.airBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 2px 6px;
+    border: 1px solid;
+    border-radius: var(--radius-full);
+    font-size: 0.625rem;
+    text-transform: capitalize;
+}
+
+.parcoursName {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.chevron {
+    color: var(--color-text-muted);
+    transition: transform var(--transition-fast);
+}
+
+.card:hover .chevron {
+    transform: translateX(4px);
+    color: var(--color-neon-purple);
+}
+
+.description {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+}
+
+.cardFooter {
+    display: flex;
+    gap: var(--space-md);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--glass-border);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.cardFooter span {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.pathologyTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+}
+
+.pathTag {
+    padding: 2px 8px;
+    background: rgba(168, 85, 247, 0.1);
+    border-radius: var(--radius-full);
+    font-size: 0.625rem;
+    color: var(--color-neon-purple);
+    text-transform: capitalize;
+}
+
+/* --- Coaching Content --- */
+.coachingContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.progressBar {
+    height: 8px;
+    background: var(--glass-bg);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: var(--space-xs);
+}
+
+.progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-neon-purple), var(--color-neon-cyan));
+    border-radius: var(--radius-full);
+    transition: width 0.5s ease;
+}
+
+.progressLabel {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.weekList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.weekCard {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    transition: all var(--transition-fast);
+}
+
+.weekCard.completed {
+    border-color: rgba(34, 197, 94, 0.3);
+    background: rgba(34, 197, 94, 0.05);
+}
+
+.weekHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.weekInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.weekNum {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+}
+
+.weekDetails {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.checkIcon {
+    color: var(--color-neon-green);
+}
+
+.btnStart {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-neon-purple), #7c3aed);
+    border: none;
+    border-radius: var(--radius-full);
+    color: white;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btnStart:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow-purple);
+}
+
+.todaySession {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: var(--radius-lg);
+    color: var(--color-neon-purple);
+}
+
+.todaySession strong {
+    display: block;
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+}
+
+.todaySession p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.btnGo {
+    margin-left: auto;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-neon-purple);
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    font-weight: 600;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btnGo:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow-purple);
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+    .airDetails {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tab span {
+        display: none;
+    }
+}
